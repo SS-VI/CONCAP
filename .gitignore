@@ -119,19 +119,17 @@ $RECYCLE.BIN/
 *.prproj
 *.kdenlive
 images/**/raw/
-videos/**/raw/
-videos/**/*.mov
 
 
 # ------------------------------------------------------------------------------
 # LARGE BINARIES
 # ------------------------------------------------------------------------------
-# Host demonstration video externally and link to it instead of committing.
+# Never commit video to this repository. Host it externally and link to it.
 *.mp4
 *.mkv
 *.avi
 *.webm
-!videos/.gitkeep
+*.mov
 
 
 # ------------------------------------------------------------------------------

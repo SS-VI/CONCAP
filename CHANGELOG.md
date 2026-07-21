@@ -60,6 +60,18 @@ Initial field-deployed release. The system entered continuous operation at a rur
 
 ## Documentation history
 
+### [docs-1.2.0] — 2026-07-21
+
+#### Removed
+
+- **Videos section** removed from `README.md`, along with the `videos/` directory and its hosting policy. Demonstration media is not part of the repository at this stage.
+- `power-system.png` removed from the hardware overview. The solar subsystem remains documented in text and in the architecture diagrams; a dedicated photograph is not required.
+
+#### Changed
+
+- Hardware overview now presents the sensing subsystem image full width instead of paired.
+- Repository structure tree and image asset specification updated to match.
+
 ### [docs-1.1.0] — 2026-07-21
 
 #### Changed

@@ -247,18 +247,10 @@ The sensing node was deliberately designed around a **generic acquisition layer*
 
 <br/>
 
-<table>
-<tr>
-<td width="50%" align="center">
-<img src="images/sensors.png" alt="Sensing subsystem" width="100%"/>
+<div align="center">
+<img src="images/sensors.png" alt="Sensing subsystem" width="80%"/>
 <br/><sub><b>Sensing subsystem</b> — turbidity probe and analog front-end</sub>
-</td>
-<td width="50%" align="center">
-<img src="images/power-system.png" alt="Solar power subsystem" width="100%"/>
-<br/><sub><b>Energy subsystem</b> — solar array, regulation and battery bank</sub>
-</td>
-</tr>
-</table>
+</div>
 
 > [!NOTE]
 > Electrical schematics, PCB layouts, mechanical drawings, and enclosure CAD are **proprietary and withheld**. The table above documents the architecture at subsystem level only.
@@ -379,23 +371,6 @@ A cross-platform **Flutter** application delivers supervision and control to the
 
 ---
 
-## 🎬 Videos
-
-| Demonstration | Description |
-|:---|:---|
-| [**System Walkthrough**](videos/system-walkthrough.mp4) | Guided tour of the deployed installation and enclosure. |
-| [**Automatic Diversion Event**](videos/diversion-event.mp4) | Live threshold breach triggering the valve transition sequence. |
-| [**Mobile Application Demo**](videos/mobile-app-demo.mp4) | End-to-end supervision and remote configuration from the app. |
-| [**Field Commissioning**](videos/field-commissioning.mp4) | Installation, sealing, and solar subsystem startup. |
-
-<div align="center">
-<sub>▶️ Place demonstration media in <code>videos/</code>. For large files, link to an external host instead of committing binaries.</sub>
-</div>
-
-<br/>
-
----
-
 ## 📊 Results
 
 <div align="center">
@@ -460,7 +435,6 @@ CONCAP/
 │   └── ProjectHighlights.md      Engineering decisions for technical evaluators
 │
 ├── images/                       Photographs, renders, app screenshots
-├── videos/                       Demonstration media (hosted externally)
 └── assets/                       Logo and design system
 ```
 
