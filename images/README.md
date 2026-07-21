@@ -9,7 +9,6 @@ Visual assets referenced by the documentation. Replace each placeholder with the
 | `architecture.png` | Rendered system block diagram | README gallery |
 | `controller-box.png` | Control cabinet, open, showing internal layout | README hardware |
 | `sensors.png` | Sensing unit and turbidity probe | README hardware |
-| `power-system.png` | Solar array, regulation and battery bank | README hardware |
 | `valve-assembly.png` | Motorized V1 / V2 assembly | README gallery |
 | `field-installation.png` | Commissioning work on site | README gallery |
 | `mobile-app.png` | Application screens, composed side by side | README mobile |
