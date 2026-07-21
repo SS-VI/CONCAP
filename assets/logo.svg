@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="CONCAP logo">
+  <title>CONCAP — Control de Captación</title>
+
+  <defs>
+    <linearGradient id="water" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0A66C2"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="55%" stop-color="#0A66C2"/>
+      <stop offset="100%" stop-color="#0B3B66"/>
+    </linearGradient>
+    <clipPath id="dropClip">
+      <path d="M120 52 C120 52 176 118 176 152 A56 56 0 0 1 64 152 C64 118 120 52 120 52 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- outer control ring -->
+  <circle cx="120" cy="120" r="110" fill="none" stroke="url(#ring)" stroke-width="6"/>
+  <circle cx="120" cy="120" r="110" fill="none" stroke="#38BDF8" stroke-width="6"
+          stroke-linecap="round" stroke-dasharray="34 657" stroke-dashoffset="-70" opacity="0.9"/>
+  <circle cx="120" cy="120" r="110" fill="none" stroke="#38BDF8" stroke-width="6"
+          stroke-linecap="round" stroke-dasharray="34 657" stroke-dashoffset="-415" opacity="0.9"/>
+
+  <!-- droplet body -->
+  <path d="M120 52 C120 52 176 118 176 152 A56 56 0 0 1 64 152 C64 118 120 52 120 52 Z"
+        fill="none" stroke="url(#water)" stroke-width="7" stroke-linejoin="round"/>
+
+  <!-- fill level inside droplet -->
+  <g clip-path="url(#dropClip)">
+    <path d="M52 158 q17 -13 34 0 t34 0 t34 0 t34 0 v70 H52 Z" fill="url(#water)" opacity="0.85"/>
+    <path d="M52 172 q17 -13 34 0 t34 0 t34 0 t34 0 v60 H52 Z" fill="#0A66C2" opacity="0.55"/>
+  </g>
+
+  <!-- sensing node marker -->
+  <circle cx="120" cy="126" r="9" fill="#0D1117" stroke="#38BDF8" stroke-width="4"/>
+
+  <!-- telemetry arcs rising from the node -->
+  <path d="M138 112 a26 26 0 0 1 8 17" fill="none" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" opacity="0.95"/>
+  <path d="M150 100 a42 42 0 0 1 13 27" fill="none" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- valve stems -->
+  <path d="M84 196 h72" stroke="#0B3B66" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="98" cy="196" r="7" fill="#2EA44F"/>
+  <circle cx="142" cy="196" r="7" fill="#0D1117" stroke="#484F58" stroke-width="3"/>
+</svg>
