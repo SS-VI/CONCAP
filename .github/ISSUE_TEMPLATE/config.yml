@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://github.com/SS-VI/CONCAP/tree/main/docs
+    about: Architecture, system overview, installation, and operator guide.
+  - name: 🤝 Technical enquiry, collaboration or deployment
+    url: https://github.com/SS-VI/CONCAP#-contact
+    about: Contributions are closed. For anything else, get in touch directly.
+  - name: 🔒 Report a security issue privately
+    url: https://github.com/SS-VI/CONCAP/security/advisories/new
+    about: Never report vulnerabilities in a public issue. Use private disclosure.
