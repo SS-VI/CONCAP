@@ -1,0 +1,145 @@
+# ==============================================================================
+# CONCAP — Control de Captación
+# ==============================================================================
+# This is a DOCUMENTATION-ONLY repository.
+#
+# The rules below are a safety net, not a convenience. They exist to prevent
+# proprietary material from ever being committed by accident. Do not relax them.
+# ==============================================================================
+
+
+# ------------------------------------------------------------------------------
+# PROPRIETARY — MUST NEVER BE COMMITTED
+# ------------------------------------------------------------------------------
+
+# Firmware & embedded sources
+*.ino
+*.c
+*.h
+*.cpp
+*.hpp
+sdkconfig
+sdkconfig.*
+platformio.ini
+CMakeLists.txt
+/build/
+/.pio/
+/managed_components/
+
+# Mobile application sources
+*.dart
+pubspec.yaml
+pubspec.lock
+/lib/
+/android/
+/ios/
+google-services.json
+GoogleService-Info.plist
+
+# Hardware design files
+*.sch
+*.brd
+*.kicad_pcb
+*.kicad_sch
+*.kicad_pro
+*.epro
+*.json.eda
+*.gbr
+*.drl
+*.gtl
+*.gbl
+*.zip.gerber
+/gerbers/
+/fabrication/
+
+# Mechanical & CAD
+*.stl
+*.step
+*.stp
+*.f3d
+*.skp
+*.dwg
+*.dxf
+*.3mf
+
+# Calibration, characterization & datasets
+*calibration*
+*coeff*
+/data/raw/
+/characterization/
+
+# Credentials & secrets
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.p12
+*.keystore
+secrets.*
+credentials.*
+config.local.*
+mqtt.conf
+wifi.conf
+
+
+# ------------------------------------------------------------------------------
+# EDITORS & IDEs
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.history/
+
+
+# ------------------------------------------------------------------------------
+# OPERATING SYSTEM
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+
+# ------------------------------------------------------------------------------
+# MEDIA WORKING FILES
+# ------------------------------------------------------------------------------
+# Publish exported assets only — never editable project files.
+*.psd
+*.ai
+*.xcf
+*.aep
+*.prproj
+*.kdenlive
+images/**/raw/
+videos/**/raw/
+videos/**/*.mov
+
+
+# ------------------------------------------------------------------------------
+# LARGE BINARIES
+# ------------------------------------------------------------------------------
+# Host demonstration video externally and link to it instead of committing.
+*.mp4
+*.mkv
+*.avi
+*.webm
+!videos/.gitkeep
+
+
+# ------------------------------------------------------------------------------
+# TEMPORARY & GENERATED
+# ------------------------------------------------------------------------------
+*.log
+*.tmp
+*.bak
+*.orig
+/tmp/
+/node_modules/

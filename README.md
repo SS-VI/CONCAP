@@ -437,6 +437,40 @@ A cross-platform **Flutter** application delivers supervision and control to the
 
 ---
 
+## 📁 Repository Structure
+
+```
+CONCAP/
+├── README.md                     ← you are here
+├── LICENSE                       Proprietary — all rights reserved
+├── CONTRIBUTING.md               Contribution policy (currently closed)
+├── SECURITY.md                   Private vulnerability disclosure process
+├── CHANGELOG.md                  System and documentation history
+├── .gitignore                    Safety net against committing proprietary files
+│
+├── .github/
+│   └── ISSUE_TEMPLATE/
+│       └── config.yml            Issues disabled, redirected to contact channels
+│
+├── docs/
+│   ├── Architecture.md           Layered design, data flow, trade-offs, fail-safe
+│   ├── SystemOverview.md         Problem, response, topology, technology stack
+│   ├── Installation.md           Site requirements and commissioning process
+│   ├── UserGuide.md              Operator-facing guide
+│   └── ProjectHighlights.md      Engineering decisions for technical evaluators
+│
+├── images/                       Photographs, renders, app screenshots
+├── videos/                       Demonstration media (hosted externally)
+└── assets/                       Logo and design system
+```
+
+> [!NOTE]
+> There is no `src/`, `firmware/`, or `hardware/` directory — and there will not be. See [Intellectual Property Notice](#-intellectual-property-notice).
+
+<br/>
+
+---
+
 ## 🔒 Intellectual Property Notice
 
 > **The source code and hardware implementation are proprietary and therefore not included in this repository.**
@@ -483,7 +517,9 @@ See [`LICENSE`](LICENSE) for the full notice.
 
 <br/>
 
-<sub>Additional documentation · <a href="docs/Architecture.md">Architecture</a> · <a href="docs/SystemOverview.md">System Overview</a> · <a href="docs/Installation.md">Installation</a> · <a href="docs/UserGuide.md">User Guide</a> · <a href="docs/ProjectHighlights.md">Project Highlights</a></sub>
+<sub>Documentation · <a href="docs/Architecture.md">Architecture</a> · <a href="docs/SystemOverview.md">System Overview</a> · <a href="docs/Installation.md">Installation</a> · <a href="docs/UserGuide.md">User Guide</a> · <a href="docs/ProjectHighlights.md">Project Highlights</a></sub>
+
+<sub>Policies · <a href="LICENSE">License</a> · <a href="CONTRIBUTING.md">Contributing</a> · <a href="SECURITY.md">Security</a> · <a href="CHANGELOG.md">Changelog</a></sub>
 
 <br/>
 <br/>

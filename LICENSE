@@ -1,0 +1,98 @@
+CONCAP — Control de Captación
+Intelligent Water Intake Monitoring and Automation System
+
+PROPRIETARY LICENSE
+Copyright (c) 2026 David Villamil. All Rights Reserved.
+
+================================================================================
+1. OWNERSHIP
+================================================================================
+
+This repository and all of its contents — including but not limited to
+documentation, technical descriptions, diagrams, architectural specifications,
+images, videos, renderings, text, and the CONCAP name and associated marks
+(collectively, the "Materials") — are the exclusive property of the copyright
+holder and are protected by copyright law and international treaties.
+
+================================================================================
+2. NO LICENSE GRANTED
+================================================================================
+
+NO license, right, title, or interest of any kind — express, implied, by
+estoppel, or otherwise — is granted to any party by the publication of this
+repository.
+
+Without prior written authorization from the copyright holder, you MAY NOT:
+
+  (a) copy, reproduce, or republish the Materials, in whole or in part;
+  (b) modify, adapt, translate, or create derivative works from the Materials;
+  (c) distribute, sublicense, sell, rent, lease, or otherwise transfer the
+      Materials;
+  (d) use the Materials, or any information derived from them, to design,
+      manufacture, assemble, or commercialize any product or system;
+  (e) use the CONCAP name, logo, or associated marks in any manner;
+  (f) use the Materials for training, fine-tuning, or evaluating machine
+      learning models or automated systems.
+
+================================================================================
+3. SCOPE AND PURPOSE
+================================================================================
+
+This repository is published solely as a TECHNICAL PORTFOLIO and ENGINEERING
+SHOWCASE. Its purpose is to document system architecture, engineering
+decisions, and field results for evaluation by recruiters, clients, and
+technical collaborators.
+
+It is expressly NOT intended to enable reproduction of the system.
+
+================================================================================
+4. EXCLUDED INTELLECTUAL PROPERTY
+================================================================================
+
+The following are proprietary, confidential, and are NOT included in this
+repository under any circumstance:
+
+  - Firmware source code and build artifacts
+  - Mobile application source code
+  - PCB layouts, EasyEDA project files, and Gerber outputs
+  - Electrical schematics and wiring diagrams
+  - Mechanical drawings, CAD models, and STL files
+  - Sensor calibration equations, coefficients, and characterization data
+  - Control algorithms and their implementations
+  - MQTT broker endpoints, topic namespaces, and credentials
+  - Wi-Fi provisioning credentials and device keys
+  - Any source code excerpt of any subsystem
+
+All descriptions contained in this repository are maintained deliberately at an
+architectural level of abstraction and do not constitute an enabling
+disclosure.
+
+================================================================================
+5. NO WARRANTY
+================================================================================
+
+THE MATERIALS ARE PROVIDED "AS IS", FOR INFORMATIONAL PURPOSES ONLY, WITHOUT
+WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, AND
+NONINFRINGEMENT.
+
+The Materials describe a system that interacts with physical water
+infrastructure and electrical equipment. Nothing herein constitutes engineering
+advice, a design specification, or a certification of fitness for any purpose.
+IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR
+OTHER LIABILITY ARISING FROM OR IN CONNECTION WITH THE MATERIALS OR THEIR USE.
+
+================================================================================
+6. LICENSING INQUIRIES
+================================================================================
+
+Commercial licensing, technical collaboration, deployment of the system, and
+requests for authorized use are welcome and are handled case by case.
+
+Contact: see the Contact section of README.md
+
+================================================================================
+
+Unauthorized use, reproduction, or distribution of the Materials may result in
+civil and criminal penalties, and will be prosecuted to the maximum extent
+permitted by law.
