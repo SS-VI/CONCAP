@@ -64,8 +64,8 @@ flowchart TB
     end
 
     L1 --> L2 --> L3 --> L4 --> L5
-    L5 -. "commands & configuration" .-> L4
-    L4 -. .-> L3
+    L5 -.->|"commands & configuration"| L4
+    L4 -.-> L3
 
     classDef lay fill:#0d1117,stroke:#30363d,stroke-width:2px,color:#e6edf3
     class A1,A2,B1,B2,C1,C2,C3,D1,D2,E1,E2 lay
