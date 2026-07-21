@@ -324,19 +324,22 @@ sequenceDiagram
 A cross-platform **Flutter** application delivers supervision and control to the aqueduct operator from anywhere with connectivity.
 
 <div align="center">
-<img src="images/mobile-app.png" alt="CONCAP Mobile Application" width="85%"/>
+<img src="images/mobile-app.png" alt="CONCAP Mobile Application — Control, Variables and Audit screens" width="100%"/>
+<br/><sub><b>Control</b> · <b>Variables</b> · <b>Auditoría</b> — the application is delivered in Spanish, the operators' language</sub>
 </div>
 
 <br/>
 
 | Screen | Function |
 |:---|:---|
-| **Live Dashboard** | Real-time turbidity with trend visualization; additional channels appear automatically when enabled. |
-| **Valve Status** | Current hydraulic state of V1 and V2 with last-transition timestamp. |
-| **Alarms** | Chronological alarm log with push notifications on threshold breach. |
-| **Configuration** | Remote adjustment of turbidity threshold and operating parameters. |
-| **Manual Override** | Operator-initiated valve commands with confirmation guard. |
-| **System Health** | Node connectivity, link quality, and battery state indicators. |
+| **Control** | Plan view of the butterfly valve with live position and open/closed state. Remote manual mode is behind an explicit toggle — commands are rejected unless the operator arms it first. |
+| **Variables** | Live instrumentation: controller state, operating mode, encoder position, per-direction motor current on both H-bridge channels, and the state of the physical field inputs. |
+| **Auditoría** | Full chronological record of every command issued — action, timestamp, originating user, and source address. Nothing the system does is untraceable. |
+
+Beyond the screens above, the application exposes turbidity telemetry, threshold configuration, and alarm notifications.
+
+> [!NOTE]
+> **Manual mode is deliberately awkward.** Arming remote control takes a separate, explicit action before any valve command is accepted. On a system that governs a community's water intake, a single mis-tap should never be able to move a valve — the friction is the safety feature.
 
 <br/>
 
