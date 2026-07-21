@@ -93,7 +93,7 @@ Contamination events are contained in seconds instead of hours. Operators receiv
 | | Capability | Description |
 |:---:|:---|:---|
 | 🌊 | **Real-Time Turbidity Monitoring** | Continuous optical turbidity acquisition through a 24-bit precision analog front-end. |
-| 🌡️ | **Environmental Telemetry** | Ambient temperature and relative humidity logging for correlation and enclosure health. |
+| 🧩 | **Expandable Sensing Architecture** | The analog front-end and acquisition layer accept additional water-quality and environmental sensors without redesigning the node. |
 | ⚙️ | **Autonomous Valve Actuation** | Dual motorized valves driven under closed-loop logic with position feedback and end-stop protection. |
 | 📡 | **Resilient Local Link** | ESP-NOW connectionless radio between field nodes — no local Wi-Fi infrastructure required at the intake. |
 | ☁️ | **Cloud Telemetry & Alarms** | MQTT publish/subscribe pipeline for live measurements, state changes, and alarm events. |
@@ -119,10 +119,10 @@ flowchart LR
             direction TB
             TS["JXSZ-1001<br/>Turbidity Probe"]
             ADC["ADS1220<br/>24-bit ΔΣ ADC"]
-            DHT["DHT22<br/>Temp / Humidity"]
+            EXP["Expansion Ports<br/>additional sensors"]
             MCU1["ESP32-S3<br/>Acquisition Core"]
             TS --> ADC --> MCU1
-            DHT --> MCU1
+            EXP -.-> MCU1
         end
 
         subgraph N2["NODE 2 · Control Unit"]
@@ -158,7 +158,7 @@ flowchart LR
     classDef cloud fill:#1a1f2e,stroke:#0A66C2,stroke-width:2px,color:#e6edf3
     classDef power fill:#1f1a0d,stroke:#F2A900,stroke-width:2px,color:#e6edf3
 
-    class TS,ADC,DHT,MCU1,MCU2,DRV,V1,V2 hw
+    class TS,ADC,EXP,MCU1,MCU2,DRV,V1,V2 hw
     class BROKER,APP cloud
     class PWR power
 ```
@@ -220,11 +220,30 @@ stateDiagram-v2
 | **Compute** | ESP32-S3 (×2) | Dual-core MCU with integrated Wi-Fi and 2.4 GHz radio; one per node. |
 | **Water Quality** | JXSZ-1001 | Optical turbidity probe, submersible, intake-mounted. |
 | **Analog Front-End** | ADS1220 | 24-bit ΔΣ ADC with PGA and low-noise reference for stable turbidity resolution. |
-| **Environment** | DHT22 | Ambient temperature and relative humidity sensing. |
 | **Actuation** | Dual DC gear motors | High-torque geared drives coupled to the intake valves. |
 | **Motor Drive** | BTS7960 (×2) | High-current H-bridge stage with direction and PWM control. |
 | **Energy** | Solar panel + battery bank | Off-grid autonomous supply with charge regulation and low-voltage protection. |
 | **Enclosure** | IP66 rated | Sealed outdoor housing with cable glands, DIN mounting, and thermal management. |
+
+<br/>
+
+### Sensor Expansion
+
+The sensing node was deliberately designed around a **generic acquisition layer** rather than a fixed sensor set. Turbidity is the parameter that drives the control decision, but the analog front-end, power budget, and telemetry payload were sized to accommodate further instrumentation. Any parameter available as a standard commercial module can be integrated without altering the node architecture or the control logic.
+
+| Parameter | Typical commercial module | Interface | Value added |
+|:---|:---|:---:|:---|
+| **Ambient temperature & humidity** | DHT22 · SHT31 · BME280 | Digital / I²C | Enclosure health, condensation risk, seasonal correlation. |
+| **Water temperature** | DS18B20 (waterproof probe) | 1-Wire | Temperature compensation of water-quality readings. |
+| **pH** | Analog pH probe + signal board | Analog | Regulatory potability compliance. |
+| **Electrical conductivity / TDS** | TDS or EC analog probe | Analog | Dissolved solids and mineral load tracking. |
+| **Flow rate** | YF-S201 · hall-effect flowmeter | Pulse | Volumetric accounting and leak detection. |
+| **Water level** | Ultrasonic or submersible pressure | Digital / Analog | Intake and reservoir level supervision. |
+| **Rainfall** | Tipping-bucket pluviometer | Pulse | Precursor signal for anticipating turbidity events. |
+| **Barometric pressure** | BMP280 | I²C | Weather context for predictive strategies. |
+
+> [!NOTE]
+> The table above documents **integration capability**, not the current deployed configuration. The system as installed operates on turbidity as its control variable; additional channels are enabled per project scope.
 
 <br/>
 
@@ -254,7 +273,7 @@ stateDiagram-v2
 
 | Layer | Responsibility |
 |:---|:---|
-| **Acquisition Layer** *(Node 1)* | Sensor sampling, digital filtering, unit conversion, and payload framing. |
+| **Acquisition Layer** *(Node 1)* | Sensor sampling, digital filtering, unit conversion, and payload framing. Channel-agnostic — new sensors are registered without touching downstream layers. |
 | **Transport Layer** | ESP-NOW peer management, retry handling, and link-loss detection between nodes. |
 | **Control Layer** *(Node 2)* | Threshold evaluation, hysteresis, valve state machine, and fail-safe arbitration. |
 | **Actuation Layer** | H-bridge sequencing, soft-start ramping, travel timing, and stall protection. |
@@ -272,7 +291,7 @@ sequenceDiagram
     participant AP as 📱 Flutter App
 
     loop Continuous acquisition cycle
-        N1->>N1: Sample turbidity · temperature · humidity
+        N1->>N1: Sample turbidity (+ optional channels)
         N1->>N1: Filter & condition signal
         N1-->>N2: ESP-NOW frame (measurement payload)
         N2->>N2: Evaluate against threshold
@@ -320,7 +339,7 @@ A cross-platform **Flutter** application delivers supervision and control to the
 
 | Screen | Function |
 |:---|:---|
-| **Live Dashboard** | Real-time turbidity, temperature, and humidity with trend visualization. |
+| **Live Dashboard** | Real-time turbidity with trend visualization; additional channels appear automatically when enabled. |
 | **Valve Status** | Current hydraulic state of V1 and V2 with last-transition timestamp. |
 | **Alarms** | Chronological alarm log with push notifications on threshold breach. |
 | **Configuration** | Remote adjustment of turbidity threshold and operating parameters. |
@@ -405,7 +424,7 @@ A cross-platform **Flutter** application delivers supervision and control to the
 
 ## 🚀 Future Improvements
 
-- [ ] **Additional water quality parameters** — pH, conductivity, and flow rate integration.
+- [ ] **Multi-parameter deployment** — commission the expansion channels described in [Sensor Expansion](#sensor-expansion) on a live site.
 - [ ] **Historical data platform** — long-term time-series storage with analytics and reporting.
 - [ ] **Predictive diversion** — anticipate turbidity spikes by correlating rainfall data with historical response.
 - [ ] **Multi-intake fleet management** — supervise several aqueducts from a single application instance.
