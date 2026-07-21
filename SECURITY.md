@@ -52,7 +52,7 @@ Use the **Security → Report a vulnerability** tab of this repository. Reports 
 
 **Alternative channel — Email**
 
-Write to the address listed in the [Contact section of the README](README.md#-contact). Use a clear subject line:
+Write to **drvillamil94@gmail.com**. Use a clear subject line:
 
 ```
 [SECURITY] CONCAP — brief description

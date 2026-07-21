@@ -511,8 +511,8 @@ See [`LICENSE`](LICENSE) for the full notice.
 
 **Interested in the engineering behind CONCAP, a technical discussion, or a similar deployment?**
 
-[![Email](https://img.shields.io/badge/Email-Get_in_touch-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:YOUR_EMAIL)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/YOUR_PROFILE)
+[![Email](https://img.shields.io/badge/Email-drvillamil94@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:drvillamil94@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-David_René_Villamil_Díaz-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/david-rene-villamil-diaz-6a59b63a7/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SS-VI)
 
 <br/>
